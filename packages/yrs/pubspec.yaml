@@ -1,0 +1,27 @@
+name: yrs
+description: >-
+  Experimental pure-Dart bindings for yrs (the Rust port of Yjs). Pre-1.0;
+  APIs unstable; not recommended for production. Powered by
+  flutter_rust_bridge.
+version: 0.1.0
+# Not published to pub.dev. Consumers depend on this repository directly via a
+# `git:` dependency pinned to a release tag. Remove this line to publish.
+publish_to: none
+homepage: https://github.com/terra-firma-labs/yrs-dart
+repository: https://github.com/terra-firma-labs/yrs-dart
+issue_tracker: https://github.com/terra-firma-labs/yrs-dart/issues
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  flutter_rust_bridge: 2.12.0
+  freezed_annotation: ^3.0.0
+
+dev_dependencies:
+  build_runner: ^2.4.0
+  freezed: ^3.0.0
+  test: ^1.25.0
+  very_good_analysis: ^10.0.0

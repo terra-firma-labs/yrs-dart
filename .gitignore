@@ -1,0 +1,43 @@
+# IDE / editor
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.atom/
+.history
+.DS_Store
+
+# Dart / Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+pubspec.lock
+*.symbols
+*.map.json
+
+# Rust
+target/
+Cargo.lock
+
+# Native lib build outputs
+*.so
+*.dylib
+*.dll
+*.framework
+
+# Generated frb pkg outputs
+**/web/pkg/
+
+# CocoaPods (per-package; iOS/macOS specific)
+**/ios/Pods/
+**/macos/Pods/
+**/ios/Podfile.lock
+**/macos/Podfile.lock
+**/ios/.symlinks/
+**/macos/.symlinks/

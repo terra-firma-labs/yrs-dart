@@ -1,0 +1,23 @@
+[package]
+name = "yrs_bindings"
+version = "0.1.0"
+edition = "2021"
+description = "flutter_rust_bridge bindings for the `yrs` and `yrs_flutter` Dart packages"
+license = "MIT"
+repository = "https://github.com/terra-firma-labs/yrs-dart"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+flutter_rust_bridge = "=2.12.0"
+yrs = { version = "0.26", features = ["sync"] }
+serde_json = "1"
+
+# yrs's `SystemClock` is gated to non-wasm targets; on wasm we use
+# `js_sys::Date::now()` to provide a `Clock` impl for `UndoManager`.
+[target.'cfg(all(target_family = "wasm", target_os = "unknown"))'.dependencies]
+js-sys = "0.3"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(frb_expand)'] }

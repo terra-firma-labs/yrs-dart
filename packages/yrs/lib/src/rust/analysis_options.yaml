@@ -1,0 +1,8 @@
+# Self-contained on purpose. An earlier revision tried to `include:` a
+# repository-root options file that does not exist at any depth, which silently
+# dropped this directory to analyzer defaults instead of narrowing one rule.
+analyzer:
+  errors:
+    # Flutter Rust Bridge 2.12 emits this marker-only generic without a type
+    # argument. Keep the generated lane analyzed while accepting that output.
+    inference_failure_on_instance_creation: ignore

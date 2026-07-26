@@ -1,0 +1,10 @@
+rust_input: crate::api
+rust_root: rust/
+dart_output: lib/src/rust
+# Sync-only dispatch: bypasses frb's worker pool, which fails to initialize
+# inside Flutter Web --wasm runtime context. Per-function async opt-in via
+# #[frb(async)] is still supported.
+default_dart_async: false
+# Current Dart SDK fixes rewrite FRB 2.12's valid Web wire constructor into an
+# incompatible zero-argument tear-off. Keep generated output as FRB emitted it.
+dart_fix: false

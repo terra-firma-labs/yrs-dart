@@ -1,0 +1,5 @@
+name: yrs_dart_workspace
+
+packages:
+  - packages/*
+  - packages/*/example

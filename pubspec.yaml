@@ -1,0 +1,22 @@
+name: yrs_dart_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  - packages/yrs
+  - packages/yrs_flutter
+  - packages/yrs_flutter/example
+
+dev_dependencies:
+  melos: ^7.4.0
+
+melos:
+  scripts:
+    analyze:
+      description: Run dart analyze across all workspace members.
+      exec: dart analyze
+    format:
+      description: Run dart format --set-exit-if-changed across all workspace members.
+      exec: dart format --set-exit-if-changed .

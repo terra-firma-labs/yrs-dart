@@ -1,0 +1,12 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    # Vendored cargokit build_tool — its own pubspec deps aren't installed
+    # by `melos bootstrap`, so a fresh CI checkout sees unresolved imports.
+    - cargokit/**
+  errors:
+    # Path dep on the sibling `yrs` package is intentional during git-dep
+    # development. Will be replaced with a pub.dev version constraint at
+    # publish time.
+    invalid_dependency: ignore
